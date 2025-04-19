@@ -13,22 +13,29 @@ export default function ProfilePage() {
   const [showRepos, setShowRepos] = useState(false);
   const [loadingRepos, setLoadingRepos] = useState(false);
 
-  const githubUsername = session?.user?.email?.split("@")[0] || session?.user?.name?.replace(/\s/g, "").toLowerCase();
+  // Use new authenticated API route for fetching repos
+  const githubUsername = session?.user?.name;
 
   useEffect(() => {
-    if (session?.user?.name) {
-      fetch(`https://api.github.com/users/${githubUsername}`)
+    if (session?.user) {
+      fetchRepos();
+      fetch(`/api/github/user`)
         .then(res => res.json())
         .then(data => setBio(data.bio || ""));
     }
-  }, [session?.user?.name, githubUsername]);
+  }, [session]);
 
   const fetchRepos = async () => {
     setLoadingRepos(true);
-    const res = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
-    const data = await res.json();
-    setRepos(Array.isArray(data) ? data : []);
+    try {
+      const res = await fetch("/api/github/repos");
+      const data = await res.json();
+      setRepos(Array.isArray(data) ? data : []);
+    } catch (error) {
+      setRepos([]);
+    }
     setLoadingRepos(false);
+    setShowRepos(true);
   };
 
   if (!session) {
@@ -60,10 +67,7 @@ export default function ProfilePage() {
           {bio && <p className="text-gray-400 italic mb-6 text-center max-w-lg">{bio}</p>}
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mb-2">
             <button
-              onClick={() => {
-                if (!showRepos) fetchRepos();
-                setShowRepos(v => !v);
-              }}
+              onClick={() => setShowRepos(v => !v)}
               className="flex-1 px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition shadow"
             >
               {showRepos ? "Repoları Gizle" : "Repo Listesini Göster"}
@@ -114,7 +118,7 @@ export default function ProfilePage() {
       </main>
       {/* Footer */}
       <footer className="flex flex-col md:flex-row justify-between items-center px-8 py-6 text-sm text-gray-500 border-t border-[#222] mt-8">
-        <div className="mb-2 md:mb-0">©2025 DevXhibit   Tüm hakları saklıdır</div>
+        <div className="mb-2 md:mb-0">2025 DevXhibit   Tüm hakları saklıdır</div>
         <div className="flex gap-6">
           <a href="#" className="hover:underline">Kullanım Şartları</a>
           <a href="#" className="hover:underline">Gizlilik Politikası</a>
