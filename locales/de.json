@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "develop": "Entwickeln",
+    "projects": "Projekte",
+    "about": "Über",
+    "contact": "Kontakt",
+    "profile": "Profil",
+    "theme": "Thema",
+    "language": "Sprache"
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "termsOfUse": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutzrichtlinie"
+  },
+  "home": {
+    "personal_or_community_projects": "Eine Galerie für persönliche oder Community-Projekte",
+    "explore_projects": "Projekte Entdecken",
+    "develop": "Entwickeln",
+    "update": "Aktualisieren",
+    "statistics": "Statistiken",
+    "marketplace": "Marktplatz"
+  },
+  "about": {
+    "devxhibit": "DevXhibit",
+    "description": "ist eine moderne Plattform, auf der Entwickler ihre Projekte einfach von Github abrufen und mit der Community teilen können.",
+    "github": "Github",
+    "description2": "Fügen Sie Ihr eigenes Projekt hinzu, entdecken Sie Projekte anderer, lassen Sie sich inspirieren und werden Sie Teil der Software-Community.",
+    "callToAction": "Stellen Sie Ihr Projekt jetzt vor!",
+    "githubConnect": "Verbinden Sie einfach Ihr Github-Konto mit einem Klick und Ihre Projekte erscheinen automatisch in der Galerie!",
+    "sergile": "Jetzt Präsentieren"
+  },
+  "contact": {
+    "heading": "Kontakt & Team",
+    "institution": "Institution:",
+    "contactInfo": "Kontakt (Akademischer Berater):",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "message": "Ihre Nachricht",
+    "send": "Senden"
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Sie müssen sich anmelden, um Ihre Profilinformationen anzuzeigen.",
+    "signInButton": "Mit Github anmelden",
+    "signOutButton": "Abmelden",
+    "showReposButton": "Repo-Liste anzeigen",
+    "hideReposButton": "Repos ausblenden",
+    "githubReposTitle": "Github-Repositories",
+    "loadingRepos": "Lädt...",
+    "noReposFound": "Keine Repositories gefunden.",
+    "loadButton": "Laden",
+    "loadedProjectsTitle": "Auf die Seite hochgeladene Projekte",
+    "loadedStatus": "Hochgeladen"
+  }
+}

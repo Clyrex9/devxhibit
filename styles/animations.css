@@ -1,0 +1,47 @@
+.fade-slide-enter {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+}
+.fade-slide-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 350ms cubic-bezier(.4,0,.2,1), transform 350ms cubic-bezier(.4,0,.2,1);
+}
+.fade-slide-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.fade-slide-exit-active {
+  opacity: 0;
+  transform: translateY(-40px) scale(0.98);
+  transition: opacity 350ms cubic-bezier(.4,0,.2,1), transform 350ms cubic-bezier(.4,0,.2,1);
+}
+
+/* For mobile fade-in (optional, can be same as above or tweaked) */
+.animate-fade-in-mobile {
+  animation: fadeInMobile 0.45s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

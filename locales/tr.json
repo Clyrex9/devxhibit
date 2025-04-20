@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "develop": "Geliştir",
+    "projects": "Projeler",
+    "about": "Hakkında",
+    "contact": "İletişim",
+    "profile": "Profil",
+    "theme": "Tema",
+    "language": "Dil"
+  },
+  "footer": {
+    "copyright": "Tüm hakları saklıdır.",
+    "termsOfUse": "Kullanım Şartları",
+    "privacyPolicy": "Gizlilik Politikası"
+  },
+  "home": {
+    "personal_or_community_projects": "Kişisel veya topluluk projeleri için bir galeri",
+    "explore_projects": "Projeleri Keşfet",
+    "develop": "Geliştir",
+    "update": "Güncelle",
+    "statistics": "İstatistikler",
+    "marketplace": "Pazar Yeri"
+  },
+  "about": {
+    "devxhibit": "DevXhibit",
+    "description": "geliştiricilerin Github'dan projelerini kolayca çekip toplulukla paylaşabildiği modern bir platformdur.",
+    "github": "Github",
+    "description2": "Kendi projenizi ekleyin, başkalarının projelerini keşfedin, ilham alın ve yazılım topluluğunun bir parçası olun.",
+    "callToAction": "Projenizi hemen sergileyin!",
+    "githubConnect": "Sadece Github hesabınızı tek tıkla bağlayın, projeleriniz otomatik olarak galeride görünsün!",
+    "sergile": "Şimdi Sergile"
+  },
+  "contact": {
+    "heading": "İletişim & Takım",
+    "institution": "Kurum:",
+    "contactInfo": "İletişim (Akademik Danışman):",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "send": "Gönder"
+  },
+  "profile": {
+    "title": "Profil",
+    "description": "Profil bilgilerinizi görüntülemek için giriş yapmalısınız.",
+    "signInButton": "Github ile Giriş Yap",
+    "signOutButton": "Çıkış Yap",
+    "showReposButton": "Repo Listesini Göster",
+    "hideReposButton": "Reposları Gizle",
+    "githubReposTitle": "Github Depoları",
+    "loadingRepos": "Yükleniyor...",
+    "noReposFound": "Hiçbir depo bulunamadı.",
+    "loadButton": "Yükle",
+    "loadedProjectsTitle": "Siteye Yüklenen Projeler",
+    "loadedStatus": "Yüklendi"
+  }
+}

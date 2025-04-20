@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "develop": "تطوير",
+    "projects": "المشاريع",
+    "about": "حول",
+    "contact": "اتصال",
+    "profile": "الملف الشخصي",
+    "theme": "السمة",
+    "language": "اللغة"
+  },
+  "footer": {
+    "copyright": "جميع الحقوق محفوظة.",
+    "termsOfUse": "شروط الاستخدام",
+    "privacyPolicy": "سياسة الخصوصية"
+  },
+  "home": {
+    "personal_or_community_projects": "معرض للمشاريع الشخصية أو المجتمعية",
+    "explore_projects": "استكشاف المشاريع",
+    "develop": "تطوير",
+    "update": "تحديث",
+    "statistics": "إحصائيات",
+    "marketplace": "السوق"
+  },
+  "about": {
+    "devxhibit": "DevXhibit",
+    "description": "هي منصة حديثة حيث يمكن للمطورين بسهولة سحب مشاريعهم من Github وعرضها على المجتمع.",
+    "github": "جيت هاب",
+    "description2": "أضف مشروعك الخاص، واكتشف مشاريع الآخرين، واستلهم، وكن جزءًا من مجتمع البرمجيات.",
+    "callToAction": "اعرض مشروعك الآن!",
+    "githubConnect": "ما عليك سوى ربط حساب Github الخاص بك بنقرة واحدة، وستظهر مشاريعك تلقائيًا في المعرض!",
+    "sergile": "اعرض الآن"
+  },
+  "contact": {
+    "heading": "الاتصال والفريق",
+    "institution": "المؤسسة:",
+    "contactInfo": "الاتصال (المستشار الأكاديمي):",
+    "name": "اسمك",
+    "email": "بريدك الإلكتروني",
+    "message": "رسالتك",
+    "send": "إرسال"
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "description": "يجب عليك تسجيل الدخول لعرض معلومات ملفك الشخصي.",
+    "signInButton": "تسجيل الدخول باستخدام Github",
+    "signOutButton": "تسجيل الخروج",
+    "showReposButton": "عرض قائمة الريبو",
+    "hideReposButton": "إخفاء الريبو",
+    "githubReposTitle": "مستودعات Github",
+    "loadingRepos": "جار التحميل...",
+    "noReposFound": "لم يتم العثور على مستودعات.",
+    "loadButton": "تحميل",
+    "loadedProjectsTitle": "المشاريع التي تم رفعها إلى الموقع",
+    "loadedStatus": "تم الرفع"
+  }
+}

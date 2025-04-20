@@ -3,6 +3,8 @@ import React, { Suspense, useRef, useState, useCallback } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import Navbar from "../components/Navbar";
+import { useLocale } from "../lib/useLocale";
+import { getTranslation } from "../lib/i18n";
 
 const MIN_SCALE = 2.5;
 const MAX_SCALE = 8;
@@ -23,25 +25,25 @@ const team = [
     name: "Ercan Yasin Yarmacı",
     email: "ercanyasin.yarmaci@gmail.com",
     img: "/creators/yasinfoto.png",
-    bg: "from-gray-800 to-black",
+    bg: "bg-main",
   },
   {
     name: "Muhammet Mahmut Atasever",
     email: "mahmutt.atasever@gmail.com",
     img: "/creators/muhammetfoto.png",
-    bg: "from-gray-800 to-black",
+    bg: "bg-main",
   },
   {
     name: "Nihat Tunalı",
     email: "nihat.tunali@ege.edu.tr",
     img: "/creators/nihathocafoto.png",
-    bg: "from-gray-800 to-black",
+    bg: "bg-main",
   },
 ];
 
 function TeamCard({ name, email, img, bg }: { name: string; email: string; img: string; bg: string }) {
   return (
-    <div className={`group relative w-48 h-64 rounded-xl overflow-hidden shadow-xl bg-gradient-to-br ${bg} flex items-center justify-center transition-transform hover:scale-105 cursor-pointer`}>
+    <div className={`group relative w-48 h-64 rounded-xl overflow-hidden shadow-xl ${bg} flex items-center justify-center transition-transform hover:scale-105 cursor-pointer`}>
       <img
         src={img}
         alt={name}
@@ -50,18 +52,19 @@ function TeamCard({ name, email, img, bg }: { name: string; email: string; img: 
           (e.target as HTMLImageElement).src = 'https://img.icons8.com/ios-filled/100/000000/image.png';
         }}
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60 z-20">
-        <span className="text-lg font-bold text-white mb-2 text-center px-2">{name}</span>
-        <span className="text-sm text-gray-200 text-center px-2">{email}</span>
+      <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-main/60 z-20">
+        <span className="text-lg font-bold text-main mb-2 text-center px-2">{name}</span>
+        <span className="text-sm text-secondary text-center px-2">{email}</span>
       </div>
     </div>
   );
 }
 
 export default function Contact() {
-  const [autoRotate, setAutoRotate] = useState(true);
-  const [mouseOn, setMouseOn] = useState(true);
-  const [scale, setScale] = useState(4.5);
+  const [autoRotate, setAutoRotate] = useState<boolean>(true);
+  const [mouseOn, setMouseOn] = useState<boolean>(true);
+  const [scale, setScale] = useState<number>(4.5);
+  const [locale] = useLocale();
 
   // Scroll ile zoom
   const handleWheel = useCallback(
@@ -79,7 +82,7 @@ export default function Contact() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#111] text-gray-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-main text-main transition-colors duration-300 font-sans">
       <Navbar />
 
       {/* 3D Telefon Modeli */}
@@ -91,7 +94,7 @@ export default function Contact() {
         >
           {/* Mouse On Toggle */}
           <button
-            className={`absolute top-3 right-3 z-30 px-4 py-1 rounded-full text-sm font-semibold transition bg-[#181818] border border-[#333] shadow ${mouseOn ? "text-green-400" : "text-gray-400"}`}
+            className={`absolute top-3 right-3 z-30 px-4 py-1 rounded-full text-sm font-semibold transition bg-main border border-main shadow ${mouseOn ? "text-green-400" : "text-secondary"}`}
             onClick={() => setMouseOn((v) => !v)}
           >
             Mouse {mouseOn ? "Açık" : "Kapalı"}
@@ -120,40 +123,39 @@ export default function Contact() {
       </div>
 
       {/* Orta Alan */}
-      <main className="flex flex-col items-center flex-1 justify-center text-center px-4 w-full">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-gray-200">İletişim & Ekip</h1>
+      <main className="flex flex-col items-center flex-1 justify-center px-4 py-10">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-main">
+          {getTranslation(locale, 'contact', 'heading')}
+        </h1>
         {/* Yapanlar Card Grid */}
         <div className="flex flex-wrap justify-center gap-8 mb-8">
           {team.map((person) => (
             <TeamCard key={person.email} {...person} />
           ))}
         </div>
-        <div className="bg-[#222] rounded-lg p-6 max-w-2xl w-full mb-8 text-left mx-auto flex flex-col items-center">
+        <div className="bg-main rounded-lg p-6 max-w-2xl w-full mb-8 text-left mx-auto flex flex-col items-center">
           <img src="/egelogo.png" alt="Ege Üniversitesi Logo" className="w-32 h-32 mb-4 object-contain" />
-          <p className="mb-2"><span className="font-bold text-white">Kurum:</span> Ege Üniversitesi Bergama Meslek Yüksekokulu</p>
-          <p className="mb-2"><span className="font-bold text-white">İletişim (Akademik Danışman):</span> Nihat Tunalı (Öğretim Görevlisi)</p>
+          <p className="mb-2"><span className="font-bold text-main">{getTranslation(locale, 'contact', 'institution')}</span> Ege Üniversitesi Bergama Meslek Yüksekokulu</p>
+          <p className="mb-2"><span className="font-bold text-main">{getTranslation(locale, 'contact', 'contactInfo')}</span> Nihat Tunalı (Öğretim Görevlisi)</p>
         </div>
-        <form className="bg-[#222] rounded-lg p-6 max-w-2xl w-full flex flex-col gap-4 mx-auto" method="POST" action="mailto:nihat.tunali@ege.edu.tr">
-          <label className="text-left font-semibold">Adınız Soyadınız
-            <input type="text" name="name" required className="mt-1 w-full p-2 rounded bg-[#181818] border border-[#333] text-gray-100 focus:outline-none focus:border-blue-500" />
+        <form className="bg-main rounded-lg p-6 max-w-2xl w-full flex flex-col gap-4 mx-auto" method="POST" action="mailto:nihat.tunali@ege.edu.tr">
+          <label className="text-left font-semibold">{getTranslation(locale, 'contact', 'name')}
+            <input type="text" name="name" required className="mt-1 w-full p-2 rounded bg-main/50 border border-main text-main focus:outline-none focus:border-blue-500" />
           </label>
-          <label className="text-left font-semibold">E-posta Adresiniz
-            <input type="email" name="email" required className="mt-1 w-full p-2 rounded bg-[#181818] border border-[#333] text-gray-100 focus:outline-none focus:border-blue-500" />
+          <label className="text-left font-semibold">{getTranslation(locale, 'contact', 'email')}
+            <input type="email" name="email" required className="mt-1 w-full p-2 rounded bg-main/50 border border-main text-main focus:outline-none focus:border-blue-500" />
           </label>
-          <label className="text-left font-semibold">Mesajınız
-            <textarea name="message" required rows={5} className="mt-1 w-full p-2 rounded bg-[#181818] border border-[#333] text-gray-100 focus:outline-none focus:border-blue-500" />
+          <label className="text-left font-semibold">{getTranslation(locale, 'contact', 'message')}
+            <textarea name="message" required rows={5} className="mt-1 w-full p-2 rounded bg-main/50 border border-main text-main focus:outline-none focus:border-blue-500" />
           </label>
-          <button type="submit" className="mt-2 px-8 py-3 rounded bg-gray-700 hover:bg-gray-600 text-lg font-semibold transition">Gönder</button>
+          <button type="submit" className="mt-2 px-8 py-3 rounded bg-gray-700 hover:bg-gray-600 text-lg font-semibold transition">{getTranslation(locale, 'contact', 'send')}</button>
         </form>
       </main>
 
       {/* Footer */}
-      <footer className="flex flex-col md:flex-row justify-between items-center px-8 py-6 text-sm text-gray-500 border-t border-[#222] mt-8">
-        <div className="mb-2 md:mb-0">©2025 DevXhibit   Tüm hakları saklıdır</div>
-        <div className="flex gap-6">
-          <a href="#" className="hover:underline">Kullanım Şartları</a>
-          <a href="#" className="hover:underline">Gizlilik Politikası</a>
-        </div>
+      <footer className="flex flex-col md:flex-row justify-between items-center px-8 py-6 text-sm text-secondary border-t border-main mt-8 bg-footer transition-colors duration-300">
+        <div className="mb-2 md:mb-0">{getTranslation(locale, 'footer', 'copyright')} 2025 DevXhibit</div>
+        <div>devxhibit.com</div>
       </footer>
     </div>
   );

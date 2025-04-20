@@ -23,15 +23,75 @@ html, body, * {
   font-family: 'Geist', sans-serif !important;
 }
 
+/* Light mode */
+.light {
+  --bg-main: #f8f9fa;
+  --bg-card: #fff;
+  --bg-navbar: #f5f5f5;
+  --bg-footer: #f5f5f5;
+  --text-main: #18181a;
+  --text-secondary: #444;
+  --border-main: #e5e7eb;
+  --navbar-logo: #18181a; /* Always black for {} and its div */
+  --navbar-logo-bg: #fff; /* Always white for logo bg */
+  --navbar-title: #18181a; /* Black title in light mode */
+  --navbar-link: #444;
+  --navbar-link-active: #18181a;
+  --navbar-toggle-icon: #fff;
+}
+
+/* Dark mode */
+.dark {
+  --bg-main: #181818;
+  --bg-card: #222;
+  --bg-navbar: #111;
+  --bg-footer: #111;
+  --text-main: #fff;
+  --text-secondary: #bbb;
+  --border-main: #222;
+  --navbar-logo: #fff; /* Always white for {} and its div in dark */
+  --navbar-logo-bg: #222; /* Always dark for logo bg */
+  --navbar-title: #fff;
+  --navbar-link: #bbb;
+  --navbar-link-active: #fff;
+  --navbar-toggle-icon: #fff;
+}
+
+body, html {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.3s, color 0.3s;
+}
+
+.bg-navbar { background: var(--bg-navbar) !important; }
+.bg-footer { background: var(--bg-footer) !important; }
+.bg-card { background: var(--bg-card) !important; }
+.text-main { color: var(--text-main) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.border-main { border-color: var(--border-main) !important; }
+.text-navbar-logo { color: var(--navbar-logo) !important; }
+.bg-navbar-logo { background: var(--navbar-logo-bg) !important; }
+.text-navbar-title { color: var(--navbar-title) !important; }
+.text-navbar-link { color: var(--navbar-link) !important; }
+.text-navbar-link-active { color: var(--navbar-link-active) !important; font-weight: bold; }
+.text-navbar-toggle-icon { color: var(--navbar-toggle-icon) !important; }
+
+.logo-glitch-bg {
+  background-image: url('/glitch.gif') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* For Tailwind utility override */
+.dark .dark\:bg-black { background: #111 !important; }
+.light .light\:bg-white { background: #fff !important; }
+.dark .dark\:text-white { color: #fff !important; }
+.light .light\:text-black { color: #18181a !important; }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
 }

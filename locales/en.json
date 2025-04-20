@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "develop": "Develop",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "profile": "Profile",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "home": {
+    "personal_or_community_projects": "A gallery for personal or community projects",
+    "explore_projects": "Explore Projects",
+    "develop": "Develop",
+    "update": "Update",
+    "statistics": "Statistics",
+    "marketplace": "Marketplace"
+  },
+  "about": {
+    "devxhibit": "DevXhibit",
+    "description": "is a modern platform where developers can easily pull and showcase their projects from Github and share them with the community.",
+    "github": "Github",
+    "description2": "Add your own project, discover others' projects, get inspired, and be part of the software community.",
+    "callToAction": "Showcase your project now!",
+    "githubConnect": "Just connect your Github account with one click, and your projects will automatically appear in the gallery!",
+    " sergile": "Showcase Now"
+  },
+  "contact": {
+    "heading": "Contact & Team",
+    "institution": "Institution:",
+    "contactInfo": "Contact (Academic Advisor):",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send"
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "You must sign in to view your profile information.",
+    "signInButton": "Sign in with Github",
+    "signOutButton": "Sign Out",
+    "showReposButton": "Show Repo List",
+    "hideReposButton": "Hide Repos",
+    "githubReposTitle": "Github Repositories",
+    "loadingRepos": "Loading...",
+    "noReposFound": "No repositories found.",
+    "loadButton": "Load",
+    "loadedProjectsTitle": "Projects Uploaded to Site",
+    "loadedStatus": "Uploaded"
+  }
+}

@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "../auth/authOptions";
 
 export async function GET(req: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -9,7 +9,6 @@ export async function GET(req: NextRequest) {
   }
 
   // Get the GitHub access token from the session
-  // @ts-expect-error: accessToken is added to session in NextAuth callback
   const accessToken = session.accessToken || session.user.accessToken;
   if (!accessToken) {
     return NextResponse.json({ error: "No GitHub access token found" }, { status: 403 });
